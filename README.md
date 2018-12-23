@@ -89,14 +89,14 @@ Maven Release Plugin is used to create releases of your artifacts. Releasing a p
 </plugin>
 ```
 
+SCM refers to Source Control Management. 
+
 ```xml
 <scm>
 	<developerConnection>scm:git:git@github.com:lizhanmit/pet-clinic.git</developerConnection>
 	<tag>HEAD</tag>
 </scm>
 ```
-
-SCM refers to Source Control Management. 
 
 2. In terminal, `mvn release:prepare`. Then get the following.
 
@@ -111,6 +111,36 @@ SCM refers to Source Control Management.
 [INFO] BUILD SUCCESS
 ...
 ```
+
+**Troubleshooting**
+
+Problem
+
+```
+...
+[ERROR] The git-tag command failed.
+[ERROR] Command output:
+[ERROR] fatal: tag 'pet-clinic-0.0.1' already exists
+...
+```
+
+Solution 
+
+	1. In terminal, `git fetch --tags`. 
+	2. In terminal, `mvn release:clean`. Then get the following. 
+	
+```
+...
+[INFO] Cleaning up after release...
+...
+[INFO] pet-clinic ......................................... SUCCESS [  0.361 s]
+[INFO] pet-clinic-data .................................... SKIPPED
+[INFO] pet-clinic-web ..................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+...
+```
+
 3. In terminal, `mvn release:perform`. Then get the following.
 
 ```
@@ -124,4 +154,27 @@ SCM refers to Source Control Management.
 [INFO] BUILD SUCCESS
 ...
 ```
+
+**Troubleshooting**
+
+Problem
+
+```
+...
+[ERROR] The git-push command failed.
+...
+[ERROR] git@github.com: Permission denied (publickey).
+[ERROR] fatal: Could not read from remote repository.
+...
+```
+
+Reason: No SSH Key on this machine.
+
+
+Solution
+
+	1. [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+	2. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) 
+	3. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
+
 
