@@ -69,4 +69,59 @@ pet-clinic (root)
 [INFO] pet-clinic-web 0.0.1-SNAPSHOT ...................... SUCCESS [ 10.582 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
+...
 ```
+
+## Maven Release Plugin
+
+Maven Release Plugin is used to create releases of your artifacts. Releasing a project is made in two steps: prepare and perform.
+
+1. Add "maven-release-plugin" and "scm" in "pet-clinic" pom.xml.
+
+```xml
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-release-plugin</artifactId>
+	<configuration>
+		<goals>install</goals>
+		<autoVersionSubmodules>true</autoVersionSubmodules>
+	</configuration>
+</plugin>
+```
+
+```xml
+<scm>
+	<developerConnection>scm:git:git@github.com:lizhanmit/pet-clinic.git</developerConnection>
+	<tag>HEAD</tag>
+</scm>
+```
+
+SCM refers to Source Control Management. 
+
+2. In terminal, `mvn release:prepare`. Then get the following.
+
+```
+...
+[INFO] Release preparation complete.
+...
+[INFO] pet-clinic ......................................... SUCCESS [ 56.711 s]
+[INFO] pet-clinic-data .................................... SKIPPED
+[INFO] pet-clinic-web ..................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+...
+```
+3. In terminal, `mvn release:perform`. Then get the following.
+
+```
+...
+[INFO] Cleaning up after release...
+...
+[INFO] pet-clinic ......................................... SUCCESS [01:51 min]
+[INFO] pet-clinic-data .................................... SKIPPED
+[INFO] pet-clinic-web ..................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+...
+```
+
