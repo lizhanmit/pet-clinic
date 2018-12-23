@@ -1,6 +1,6 @@
-# Spring Pet Clinic Project 
+# Spring Pet Clinic Project
 
-## Project Structure 
+## Project Structure
 
 pet-clinic (root)
 |
@@ -8,12 +8,12 @@ pet-clinic (root)
 |- pet-clinic-web
 
 1. Create Maven modules under "pet-clinic" project.
-2. Move Application.java and ApplicationTest.java to "pet-clinic-web" module. 
+2. Move Application.java and ApplicationTest.java to "pet-clinic-web" module.
 3. Move "static" folder, "templates" folder and "application.properties" file under "resources" folder of "pet-clinic" to "resources" folder of "pet-clinic-web".
 4. Move "model" package to "pet-clinic-data" module.   
-5. Move pom.xml "actuator", "thymeleaf", "web", "devtools", "test" dependency to "pet-clinic-web" pom.xml. 
-6. Move pom.xml "data-jpa", "h2", "mysql", "lombok", "test" (copy this one) dependency to "pet-clinic-data" pom.xml. 
-7. Add "pet-clinic-data" dependency in "pet-clinic-web" pom.xml. 
+5. Move pom.xml "actuator", "thymeleaf", "web", "devtools", "test" dependency to "pet-clinic-web" pom.xml.
+6. Move pom.xml "data-jpa", "h2", "mysql", "lombok", "test" (copy this one) dependency to "pet-clinic-data" pom.xml.
+7. Add "pet-clinic-data" dependency in "pet-clinic-web" pom.xml.
 
 ```xml
 <dependency>
@@ -23,7 +23,7 @@ pet-clinic (root)
 </dependency>
 ```
 
-8. Add the following in "pet-clinic-data" pom.xml to avoid "Error: Unable to find main class" due to Spring Boot version >= 2.1. 
+8. Add the following in "pet-clinic-data" pom.xml to avoid "Error: Unable to find main class" due to Spring Boot version >= 2.1.
 
 ```xml
 <build>
@@ -89,7 +89,7 @@ Maven Release Plugin is used to create releases of your artifacts. Releasing a p
 </plugin>
 ```
 
-SCM refers to Source Control Management. 
+SCM refers to Source Control Management.
 
 ```xml
 <scm>
@@ -124,11 +124,11 @@ Problem
 ...
 ```
 
-Solution 
+Solution
 
-	1. In terminal, `git fetch --tags`. 
-	2. In terminal, `mvn release:clean`. Then get the following. 
-	
+  1. In terminal, `git fetch --tags`.
+  2. In terminal, `mvn release:clean`. Then get the following.
+
 ```
 ...
 [INFO] Cleaning up after release...
@@ -173,8 +173,6 @@ Reason: No SSH Key on this machine.
 
 Solution
 
-	1. [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-	2. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) 
-	3. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
-
-
+  1. [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+  2. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+  3. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
