@@ -126,8 +126,9 @@ Problem
 
 Solution
 
-  1. In terminal, `git fetch --tags`.
-  2. In terminal, `mvn release:clean`. Then get the following.
+i. In terminal, `git fetch --tags`.
+
+ii. In terminal, `mvn release:clean`. Then get the following.
 
 ```
 ...
@@ -173,6 +174,8 @@ Reason: No SSH Key on this machine.
 
 Solution
 
-  1. [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-  2. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
-  3. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
+i. [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+
+ii. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+
+iii. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
