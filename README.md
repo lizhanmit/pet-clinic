@@ -2,10 +2,12 @@
 
 ## Project Structure
 
+```
 pet-clinic (root)
 |
-|- pet-clinic-data
-|- pet-clinic-web
+|-- pet-clinic-data
+|-- pet-clinic-web
+```
 
 1. Create Maven modules under "pet-clinic" project.
 2. Move Application.java and ApplicationTest.java to "pet-clinic-web" module.
