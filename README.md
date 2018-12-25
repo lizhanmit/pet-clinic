@@ -188,7 +188,7 @@ iii. ([Error: Permission denied (publickey)](https://help.github.com/articles/er
 
 ## Class Explanation
 
-### com.zhandev.petclinic.service.map
+### pet-clinic-data -> com.zhandev.petclinic.service.map
 
 - "OwnerServiceMap", "PetServiceMap" and "VetServiceMap" class are implementations of corresponding service interface under "com.zhandev.petclinic.service" package. 
 - As those service interfaces have a common service interface -  "CrudService", so these service implementations extend it. 
