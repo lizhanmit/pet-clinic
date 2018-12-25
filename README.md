@@ -74,6 +74,8 @@ pet-clinic (root)
 ...
 ```
 
+---
+
 ## Maven Release Plugin
 
 Maven Release Plugin is used to create releases of your artifacts. Releasing a project is made in two steps: prepare and perform.
@@ -181,3 +183,13 @@ i. [Generating a new SSH key and adding it to the ssh-agent](https://help.github
 ii. [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 iii. ([Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/))
+
+---
+
+## Class Explanation
+
+### com.zhandev.petclinic.service.map
+
+- "OwnerServiceMap", "PetServiceMap" and "VetServiceMap" class are implementations of corresponding service interface under "com.zhandev.petclinic.service" package. 
+- As those service interfaces have a common service interface -  "CrudService", so these service implementations extend it. 
+- As these service implementations have common property and methods, so we extract an abstract service class - "AbstractMapService" - to let them extend it. 
