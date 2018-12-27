@@ -3,9 +3,9 @@ package com.zhandev.petclinic.service.map;
 import java.util.Set;
 
 import com.zhandev.petclinic.model.Owner;
-import com.zhandev.petclinic.service.CrudService;
+import com.zhandev.petclinic.service.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
