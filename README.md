@@ -186,10 +186,21 @@ iii. ([Error: Permission denied (publickey)](https://help.github.com/articles/er
 
 ---
 
+## Bootstrap Code for Startup Processes
+
+Create a bootstrap class to execute startup processes, e.g. data loading or initialization. 
+
+1. Create "bootstrap" package under "pet-clinic-web". 
+2. Create "DataLoader" class under "bootstrap" package. 
+3. Implements `CommandLineRunner`. (This is Spring Boot specific way whereas there are other different ways.)
+4. Annotate `@Component` for the class. 
+5. Override `run()` method and write bootstrap code in it.
+
+---
+
 ## Class Explanation
 
 ### pet-clinic-data -> com.zhandev.petclinic.service.map
 
 - "OwnerServiceMap", "PetServiceMap" and "VetServiceMap" class are implementations of corresponding service interface under "com.zhandev.petclinic.service" package. 
-- As those service interfaces have a common service interface -  "CrudService", so these service implementations extend it. 
-- As these service implementations have common property and methods, so we extract an abstract service class - "AbstractMapService" - to let them extend it. 
+- As these service implementations have common property and methods, so we extract an abstract service class - "AbstractMapService" - making them extend it. 
