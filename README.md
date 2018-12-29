@@ -62,7 +62,7 @@ pet-clinic (root)
 ...
 ```
 
-11. For "pet-clinic", "Run As" -> "Maven build..." -> set "Goals" as `package`. Then get the following in console.
+11. For "pet-clinic", "Run As" -> "Maven build..." -> set "Goals" as `package` -> Run. Then get the following in console.
 
 ```
 ...
@@ -192,9 +192,17 @@ Create a bootstrap class to execute startup processes, e.g. data loading or init
 
 1. Create "bootstrap" package under "pet-clinic-web". 
 2. Create "DataLoader" class under "bootstrap" package. 
-3. Implements `CommandLineRunner`. (This is Spring Boot specific way whereas there are other different ways.)
+3. Make the class implement `CommandLineRunner`. (This is Spring Boot specific way whereas there are other different ways.)
 4. Annotate `@Component` for the class. 
 5. Override `run()` method and write bootstrap code in it.
+
+Another way: 
+
+Step 1. and 2. are the same as the above. 
+
+3. Make the class implement `ApplicationListener<ContextRefreshedEvent>`.
+4. Annotate `@Component` for the class.  
+5. Override `onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent)` method and write bootstrap code in it.
 
 ---
 
