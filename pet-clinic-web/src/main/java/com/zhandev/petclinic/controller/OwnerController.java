@@ -21,4 +21,9 @@ public class OwnerController {
 		model.addAttribute("owners", ownerService.findAll());
 		return "owners/index";  // "templates" folder -> "owners" folder -> "index.html" file
 	}
+	
+	@RequestMapping("/find")  
+	public String findOwners(Model model) {
+		return "notImplemented";  
+	}
 }
